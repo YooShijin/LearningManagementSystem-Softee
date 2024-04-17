@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
 import { Button } from "../UI/Button";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -28,9 +29,11 @@ const Hero = () => {
           Begin your educational adventure with our extensive range of courses
           crafted by a diverse group of expert instructors.
         </p>
-        <Button theme="dark" className="my-6 mx-auto">
-          Get Started
-        </Button>
+        <Link to="/login">
+          <Button theme="dark" className="my-6 mx-auto w-[150px]">
+            Get Started
+          </Button>
+        </Link>
       </div>
     </div>
   );

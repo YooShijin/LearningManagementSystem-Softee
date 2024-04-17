@@ -1,88 +1,124 @@
 import { useState } from "react";
 import { FaFacebook, FaGoogle, FaGithub } from "react-icons/fa";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+{
+  /* <IoMdEyeOff /> */
+}
 
 export const SignUpForm = ({ setIsLogin }) => {
-  const [role, setRole] = useState("");
+  //   const [role, setRole] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerName, setRegisterName] = useState("");
   return (
-    <div className="bg-blue-400 text-white rounded-2xl shadow-2xl  flex flex-col w-full  md:w-1/3 items-center max-w-4xl transition duration-1000 ease-in">
-      {/* <h2 className="p-3 text-3xl font-bold text-white">Horiz</h2> */}
-      <div className="inline-block border-[1px] justify-center w-20 border-white border-solid"></div>
-      <h3 className="text-xl font-semibold text-white pt-2">Create Account!</h3>
+    <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <form className="space-y-6" action="#">
+        <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+          Sign Up and Start Learning
+        </h5>
+        <div>
+          <label
+            htmlFor="name"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Full Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            placeholder="Your full name"
+            required
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="email"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Your email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            placeholder="name@mail.com"
+            required
+          />
+        </div>
+        <div className="relative">
+          <label
+            htmlFor="password"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Your password
+          </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="••••••••"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#00df9a] focus:border-[#00df9a] block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+            required
+          ></input>
+          <IoMdEye className="absolute top-[70%] transform -translate-y-1/2 right-4 text-black hover:cursor-pointer" />
+        </div>
+        <div className="flex items-start">
+          <div className="flex items-start">
+            <div className="flex items-center h-5">
+              <input
+                id="remember"
+                type="checkbox"
+                value=""
+                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                required
+              />
+            </div>
+            <label
+              htmlFor="remember"
+              className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >
+              Remember me
+            </label>
+          </div>
+          <a
+            href="#"
+            className="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
+          >
+            Lost Password?
+          </a>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full text-white bg-[#00df9a] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Login to your account
+        </button>
+
+        <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+          Not registered?{" "}
+          <a
+            href="#"
+            className="text-blue-700 hover:underline dark:text-blue-500"
+          >
+            Create account
+          </a>
+        </div>
+      </form>
       <div className="flex space-x-2 m-4 items-center justify-center">
-        <div className="socialIcon border-white">
-          <FaFacebook className="text-white" />
+        <div className="socialIcon border-black">
+          <FaFacebook className="text-black" />
         </div>
-        <div className="socialIcon border-white">
-          <FaGithub className="text-white" />
+        <div className="socialIcon border-black">
+          <FaGithub className="text-black" />
         </div>
-        <div className="socialIcon border-white">
-          <FaGoogle className="text-white" />
+        <div className="socialIcon border-black">
+          <FaGoogle className="text-black" />
         </div>
       </div>
-      {/* Inputs */}
-      <form className="flex flex-col items-center justify-center mt-2">
-        <input
-          type="text"
-          className="rounded-2xl px-2 py-1 w-4/5 md:w-full border-[1px] border-blue-400 m-1 focus:shadow-md focus:border-pink-400 focus:outline-none focus:ring-0"
-          placeholder="Name"
-          value={registerName}
-          onChange={(e) => setRegisterName(e.target.value)}
-        ></input>
-        <input
-          type="email"
-          className="rounded-2xl px-2 py-1 w-4/5 md:w-full border-[1px] border-blue-400 m-1 focus:shadow-md focus:border-pink-400 focus:outline-none focus:ring-0"
-          placeholder="Email"
-          value={registerEmail}
-          onChange={(e) => setRegisterEmail(e.target.value)}
-        ></input>
-        <input
-          type="password"
-          className="rounded-2xl px-2 py-1 w-4/5 md:w-full border-[1px] border-blue-400 m-1 focus:shadow-md focus:border-pink-400 focus:outline-none focus:ring-0"
-          placeholder="Password"
-          value={registerPassword}
-          onChange={(e) => setRegisterPassword(e.target.value)}
-        ></input>
-        <div className="flex gap-5 items-center justify-center">
-          <div className="items-center justify-center font-bold text-lg">
-            <label className="items-center justify-center">
-              <input
-                type="radio"
-                name="first"
-                value="student"
-                checked={role === "student"}
-                onChange={(e) => setRole(e.target.value)}
-              />{" "}
-              Student
-            </label>
-          </div>
-          <div className="items-center justify-center font-bold text-lg">
-            <label>
-              <input
-                type="radio"
-                name="second"
-                value="teacher"
-                checked={role === "teacher"}
-                onChange={(e) => setRole(e.target.value)}
-              />{" "}
-              Teacher
-            </label>
-          </div>
-        </div>
-        <button className="rounded-2xl m-4 text-blue-400 bg-white w-3/5 px-4 py-2 shadow-md hover:text-white hover:bg-blue-400 transition duration-200 ease-in">
-          Sign Up
-        </button>
-      </form>
-      <div className="inline-block border-[1px] justify-center w-20 border-white border-solid"></div>
-      <p className="text-white mt-4 text-sm">Already have an account?</p>
-      <p
-        className="text-white mb-4 text-sm font-medium cursor-pointer"
-        onClick={() => setIsLogin(true)}
-      >
-        Sign In to your Account?
-      </p>
     </div>
   );
 };

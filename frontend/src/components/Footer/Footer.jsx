@@ -30,7 +30,7 @@ const Footer = () => {
           {/* <FaDribbbleSquare size={30} /> */}
         </div>
       </div>
-      <div class="w-[90%] border-t border-gray-300 "></div>
+      <div className="w-[90%] border-t border-gray-300 "></div>
       <div>
         <p>@2024 All copywright reserved Hue Hue app</p>
       </div>
