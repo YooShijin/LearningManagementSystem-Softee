@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-dbURL = "mongodb+srv://asmit0:OkayGoogle@cluster0.qv1o2xw.mongodb.net/";
+dbURL = "mongodb+srv://username:password@cluster_name.qv1o2xw.mongodb.net/";
 
 mongoose.connect(dbURL);
 
